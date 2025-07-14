@@ -1,0 +1,42 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual env
+my_env
+
+# Model files
+
+
+# Logs
+logs/
+*.log
+
+# Data
+data/
+*.csv
+*.xlsx
+*.db
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Secrets & config
+.env
+
+# Streamlit config (optional)
+.streamlit/config.toml
+
+# Test caches
+pytest_cache/
+.cache/
+
+# VSCode/IDE files
+.vscode/
+.idea/
