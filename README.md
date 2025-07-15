@@ -28,17 +28,28 @@ CNN is chosen because it mimics the way a human eye understands images, and it c
 Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
+
 =================================================================
 conv2d (Conv2D)              (None, 126, 126, 32)      896
+
 max_pooling2d (MaxPooling2D) (None, 63, 63, 32)        0
+
 conv2d_1 (Conv2D)            (None, 61, 61, 64)        18,496
+
 max_pooling2d_1             (None, 30, 30, 64)         0
+
 conv2d_2 (Conv2D)            (None, 28, 28, 128)       73,856
+
 max_pooling2d_2             (None, 14, 14, 128)        0
+
 flatten (Flatten)            (None, 25088)             0
+
 dense (Dense)                (None, 256)               6,422,784
+
 dropout (Dropout)            (None, 256)               0
+
 dense_1 (Dense)              (None, 39)                10,023
+
 =================================================================
 Total params: 6,526,055
 Trainable params: 6,526,055
@@ -104,36 +115,67 @@ Compatible with load_model() in both Streamlit and production scripts
 ## 🛠️ Project Structure
 PLANTA_DISEASE_DETECTION/
 ├── app/                               # Streamlit web app for end-user interaction
+
 │   └── app.py                         # Main script for the interactive web UI
+
 ├── data/                              # Dataset and all data splits
+
 │   ├── train/                         # Training images (organized by class)
+
 │   ├── val/                           # Validation images (organized by class)
+
 │   ├── test/                          # Test images — unseen during training
+
 ├── models/                            # Saved model files
+
 │   └── final_model.h5                 # Final trained CNN model
+
 ├── my_env/                            # (Optional) Python virtual environment (should be in .gitignore)
+
 ├── Reports/                           # Evaluation results and artifacts
+
 │   ├── classification_report.txt      # Text classification report of test results
+
 │   ├── confusion_matrix.png           # Visualization of confusion matrix
+
 │   └── test_predictions.csv           # CSV with model predictions on test data
+
 ├── src/                               # Source code for the project
+
 │   ├── __init__.py                    # Python module initialization
+
 │   ├── config.py                      # Central config for paths and constants
+
 │   ├── data_fetcher.py                # Download data using Kaggle API
+
 │   ├── data_loader.py                 # Load data using ImageDataGenerator 
+
 │   ├── inference_utils.py             # Helper functions for model inference like top 5 prediction and confidence matrix
+
 │   ├── log.py                         # Custom logger to record steps/output
+
 │   ├── model.py                       # Defines CNN architecture
+
 │   ├── model_loader.py                # Loads saved models for inference/testing
+
 │   ├── pipeline.py                    # Trains the model end-to-end
+
 │   ├── preprocess_ip_image.py        # Preprocessing for a single input image
+
 │   ├── preprocessing.py              # Training data preprocessing and augmentation
+
 │   ├── report.py                      # Generates evaluation reports and plots
+
 │   ├── test_pipeline.py              # Loads test data and evaluates model
+
 │   └── utils.py                       # Common utility functions (directory checks, plotting, etc.)
+
 ├── .gitignore                         # Files/folders to be ignored by Git
+
 ├── Plant_Disease_Prediction.ipynb     # Jupyter notebook for prototyping and experiments
+
 ├── README.md                          # Project overview and instructions
+
 └── requirements.txt                   # List of Python dependencies for the project
 
 
